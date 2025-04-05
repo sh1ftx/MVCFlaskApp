@@ -14,9 +14,8 @@ cursor.execute("""
     CREATE TABLE IF NOT EXISTS usuarios(
                     id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
                     nome TEXT NOT NULL,
-                    idade INTEGER NOT NULL,
                     email TEXT UNIQUE NOT NULL,
-                    teLefone TEXT NOT NULL,
+                    telefone TEXT NOT NULL,
                     cidade TEXT NOT NULL,
                     data_nascimento DATETIME NOT NULL)""")
 

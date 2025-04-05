@@ -42,6 +42,7 @@
         document.getElementById("cadastroForm").addEventListener("submit", async (e) => {
             e.preventDefault();
 
+            // Gera um dicionario com os dados
             const dados = {
                 nome: document.getElementById("nome").value,
                 email: document.getElementById("email").value,
@@ -50,15 +51,22 @@
                 data_nascimento: document.getElementById("data_nascimento").value
             };
 
-
+            // Envia o dicionario para a route cadastro
             const response = await fetch("/cadastro", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(dados)
             });
 
+            // aguarda uma reposta do route
             const result = await response.json();
-            alert(result.message || "Erro desconhecido");
+
+            // Verifica se deu tudo certo ou nao e notifica
+            if (response.ok) {
+                alert(result.message);
+            } else {
+                alert(result.error || "Erro ao cadastrar!");
+            }
 
         });
     </script>
