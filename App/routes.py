@@ -2,6 +2,7 @@ from flask import request, jsonify, render_template
 from App.crud import * 
 from App import app 
 
+# Apenas para renderizar a primeira pagina do site
 @app.route("/")
 def home():
     return render_template("index.html")

@@ -1,6 +1,6 @@
 from flask import Flask
 
-# Cria a instância principal do Flask
+# Cria o app do Flask
 app = Flask(__name__)
 
 # Importa as rotas
