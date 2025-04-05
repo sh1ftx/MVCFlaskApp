@@ -1,24 +1,34 @@
 import sqlite3
 
-banco = sqlite3.connect('database_mvc.db')
-    
-cursor = banco.cursor()
+#função para conectar no bando de dados
+def conectar():
+    conexao = sqlite3.connect('database_mvc.db')
+    return conexao
 
-sql = """
-CREATE TABLE usuarios(id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-                    name TEXT NOT NULL,
-                    phone TEXT NOT NULL,
-                    email TEXT UNIQUE NOT NULL)"""
+conexao = conectar()
+
+cursor = conexao.cursor()
 
 
-sql = """
-CREATE TABLE produtos(id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-                    name TEXT NOT NULL,
+cursor.execute("""
+    CREATE TABLE IF NOT EXISTS usuarios(
+                    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                    nome TEXT NOT NULL,
+                    idade INTEGER NOT NULL,
+                    email TEXT UNIQUE NOT NULL,
+                    teLefone TEXT NOT NULL,
+                    cidade TEXT NOT NULL,
+                    data_nascimento DATETIME NOT NULL)""")
+
+
+cursor.execute("""
+    CREATE TABLE IF NOT EXISTS produtos(
+                    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                    nome TEXT NOT NULL,
                     marca TEXT NOT NULL,
-                    preco TEXT UNIQUE NOT NULL)"""
+                    preco TEXT UNIQUE NOT NULL,
+                    estoque INTEGER NOT NULL)""")
                     
-cursor.execute(sql)
+conexao.commit()
 
-banco.commit()
-
-banco.close()
+conexao.close()
