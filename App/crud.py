@@ -1,4 +1,4 @@
-from banco_de_dados_init import conectar 
+from App.banco_de_dados import conectar 
 import sqlite3
 
 #funçao para inserir dados na tabela
