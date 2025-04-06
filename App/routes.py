@@ -25,4 +25,4 @@ def register():
         
         return jsonify({"message": "Usuário cadastrado com sucesso!"}), 201
     else:
-        return render_template("page-cadastro.html")
+        return render_template("page_cadastro.html")
