@@ -7,8 +7,8 @@ from App import app
 def home():
     return render_template("index.html")
 
-#Função para adicionar o usuario ao banco de dados
-@app.route("/cadastro", methods=["GET", "POST"])
+# Função para adicionar o usuario ao banco de dados
+@app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
         data = request.json
@@ -25,4 +25,31 @@ def register():
         
         return jsonify({"message": "Usuário cadastrado com sucesso!"}), 201
     else:
-        return render_template("page_cadastro.html")
+        return render_template("register.html")
+    
+# Função que renderiza a pagina de edição e permite as alterações    
+@app.route("/edit_user/<int:id>", methods=["GET", "POST"])
+def edit_user(id):
+    if request.method == "POST":
+        data = request.json
+
+        user_data = {
+            "nome": data.get("nome"),
+            "telefone": data.get("telefone"),
+            "email": data.get("email"),
+            "cidade": data.get("cidade"),
+            "data_nascimento": data.get("data_nascimento")
+        }
+
+        update("usuarios", user_data, f"id = {id}")
+        return jsonify({"message": "Usuário atualizado com sucesso!"}), 200
+    
+    user = read("usuarios", f"id = {id}")[0]
+    return render_template("edit_user.html", user=user)
+
+
+# Função que renderiza a pagina que mostra todos os usuarios
+@app.route("/user_list")
+def user_list():
+    users = read("usuarios")
+    return render_template("user_list.html", users=users)
