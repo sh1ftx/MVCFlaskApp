@@ -85,7 +85,8 @@ h2 {
 }
 
 /* Botão com gradiente verde-aquário para ciano */
-.button, button {
+.button,
+button {
   padding: 10px 20px;
   margin-top: 15px;
   background: linear-gradient(to right, #64ffda, #00bcd4);
@@ -97,7 +98,8 @@ h2 {
   transition: background 0.3s ease;
 }
 
-.button:hover, button:hover {
+.button:hover,
+button:hover {
   background: linear-gradient(to right, #52e0c4, #00acc1);
 }
 
