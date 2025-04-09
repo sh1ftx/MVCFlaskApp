@@ -1,95 +1,27 @@
-/* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-body {
-  min-height: 100vh;
-  background: linear-gradient(145deg, #1a1a1a, #2e2e2e);
-  color: #E0E0E0;
-  padding: 40px 20px;
-  text-align: center;
-}
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Usuário</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/edit_user.css') }}">
+</head>
 
-/* Título principal */
-h1 {
-  font-size: 32px;
-  margin-bottom: 30px;
-  background: linear-gradient(90deg, #64ffda, #00e5ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-}
+<body>
+    <h1>Editar Usuário</h1>
+    <form id="editForm">
+        <input type="hidden" id="id" name="id" value="{{ user[0] }}">
+        <p>Nome: <input type="text" id="nome" value="{{ user[1] }}" required></p>
+        <p>Email: <input type="email" id="email" value="{{ user[2] }}" required></p>
+        <p>Telefone: <input type="text" id="telefone" value="{{ user[3] }}" required></p>
+        <p>Cidade: <input type="text" id="cidade" value="{{ user[4] }}" required></p>
+        <p>Data Nasc.: <input type="date" id="data_nascimento" value="{{ user[5] }}" required></p>
+        <button type="submit">Salvar</button>
+        <a href="/user_list">Cancelar</a>
+    </form>
 
-/* Tabela */
-table {
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  border-collapse: collapse;
-  background: linear-gradient(135deg, #1f1f1f, #2c2c2c);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-  border-radius: 12px;
-  overflow: hidden;
-}
 
-th, td {
-  padding: 16px 20px;
-  border-bottom: 1px solid #444;
-  text-align: left;
-}
+</body>
+<script src="{{ url_for ('static', filename = 'js/edit_user.js') }}"></script>
 
-th {
-  background-color: #2e2e2e;
-  font-size: 16px;
-  color: #00ffe5;
-}
-
-tr:nth-child(even) {
-  background-color: #252525;
-}
-
-tr:hover {
-  background-color: #333;
-}
-
-/* Botões */
-.button {
-  padding: 10px 16px;
-  background: linear-gradient(90deg, #64ffda, #00e5ff);
-  color: #121212;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
-
-.button:hover {
-  background: linear-gradient(90deg, #52e0c4, #00c3f9);
-  transform: scale(1.05);
-}
-
-/* Link de cadastrar novo */
-a[href="/register"] {
-  display: inline-block;
-  margin-top: 30px;
-  background: transparent;
-  color: #64ffda;
-  text-decoration: none;
-  font-weight: bold;
-  border: 2px solid #64ffda;
-  padding: 10px 16px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-a[href="/register"]:hover {
-  background-color: #64ffda;
-  color: #121212;
-}
+</html>
