@@ -8,8 +8,8 @@ def home():
     return render_template("index.html")
 
 # Função para adicionar o usuario ao banco de dados
-@app.route("/register", methods=["GET", "POST"])
-def register():
+@app.route("/user_register", methods=["GET", "POST"])
+def user_register():
     if request.method == "POST":
         data = request.json
 
@@ -25,7 +25,7 @@ def register():
         
         return jsonify({"message": "Usuário cadastrado com sucesso!"}), 201
     else:
-        return render_template("register.html")
+        return render_template("user_register.html")
     
 # Função que renderiza a pagina de edição e permite as alterações    
 @app.route("/edit_user/<int:id>", methods=["GET", "POST"])
@@ -54,7 +54,10 @@ def user_list():
     users = read("usuarios")
     return render_template("user_list.html", users=users)
 
+# Função para excluir um usuario
 @app.route("/excluir/<int:id>")
 def delete_user(id):
     delete("usuarios", f"id = {id}")
     return redirect(url_for("user_list"))
+
+# ------- Funções referentes a tabela de produtos
