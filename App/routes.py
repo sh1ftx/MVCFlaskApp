@@ -61,3 +61,47 @@ def delete_user(id):
     return redirect(url_for("user_list"))
 
 # ------- Funções referentes a tabela de produtos
+
+# Página de cadastro de produto
+@app.route("/register_product", methods=["GET", "POST"])
+def register_product():
+    if request.method == "POST":
+        data = request.json
+        produto = {
+            "nome": data.get("nome"),
+            "marca": data.get("marca"),
+            "preco": data.get("preco"),
+            "estoque": data.get("estoque")
+        }
+        create("produtos", produto)
+        return jsonify({"message": "Produto cadastrado com sucesso!"}), 201
+    return render_template("register_product.html")
+
+# Página de listagem de produtos
+@app.route("/product_list")
+def product_list():
+    produtos = read("produtos")
+    return render_template("product_list.html", produtos=produtos)
+
+# Editar produto
+@app.route("/edit_product/<int:id>", methods=["GET", "POST"])
+def edit_product(id):
+    if request.method == "POST":
+        data = request.json
+        produto = {
+            "nome": data.get("nome"),
+            "marca": data.get("marca"),
+            "preco": data.get("preco"),
+            "estoque": data.get("estoque")
+        }
+        update("produtos", produto, f"id = {id}")
+        return jsonify({"message": "Produto atualizado com sucesso!"}), 200
+
+    produto = read("produtos", f"id = {id}")[0]
+    return render_template("edit_product.html", produto=produto)
+
+# Excluir produto
+@app.route("/excluir_produto/<int:id>")
+def excluir_produto(id):
+    delete("produtos", f"id = {id}")
+    return redirect(url_for("product_list"))

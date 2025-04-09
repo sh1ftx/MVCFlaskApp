@@ -1,16 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Produto</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/page_cadastro.css') }}">
 </head>
 
 <body>
+    <h1>Editar Produto</h1>
 
-    <!--linka o codigo com o js pra poder enviar os dados certo-->
-    <script src="{{ url_for ('static', filename='js/edit_product.js')}}"></script>
+    <form id="formEditar">
+        <input type="text" id="nome" value="{{ produto[1] }}" required>
+        <input type="text" id="marca" value="{{ produto[2] }}" required>
+        <input type="text" id="preco" value="{{ produto[3] }}" required>
+        <input type="number" id="estoque" value="{{ produto[4] }}" required>
+        <button type="submit">Salvar Alterações</button>
+    </form>
+
+    <script>
+        const form = document.getElementById("formEditar");
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const dados = {
+                nome: document.getElementById("nome").value,
+                marca: document.getElementById("marca").value,
+                preco: document.getElementById("preco").value,
+                estoque: document.getElementById("estoque").value,
+            };
+
+            const response = await fetch("/edit_product/{{ produto[0] }}", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(dados)
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                alert(result.message);
+                window.location.href = "/product_list";
+            } else {
+                alert(result.error || "Erro ao atualizar!");
+            }
+        });
+    </script>
 </body>
 
 </html>
