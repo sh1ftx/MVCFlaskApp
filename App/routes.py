@@ -1,4 +1,4 @@
-from flask import request, jsonify, render_template
+from flask import request, jsonify, render_template, redirect, url_for
 from App.crud import * 
 from App import app 
 
@@ -53,3 +53,8 @@ def edit_user(id):
 def user_list():
     users = read("usuarios")
     return render_template("user_list.html", users=users)
+
+@app.route("/excluir/<int:id>")
+def delete_user(id):
+    delete("usuarios", f"id = {id}")
+    return redirect(url_for("user_list"))
