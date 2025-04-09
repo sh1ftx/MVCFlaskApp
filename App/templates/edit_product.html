@@ -1,16 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Produto</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/edit_user.css') }}">
 </head>
 
 <body>
+    <h1>Editar Produto</h1>
 
-    <!--linka o codigo com o js pra poder enviar os dados certo-->
-    <script src="{{ url_for ('static', filename='js/edit_product.js')}}"></script>
+    <form id="editForm">
+        <input type="hidden" id="id" name="id" value="{{ produto[0] }}">
+        <p>Nome: <input type="text" id="nome" value="{{ produto[1] }}" required></p>
+        <p>Marca: <input type="text" id="marca" value="{{ produto[2] }}" required></p>
+        <p>Preço: <input type="text" id="preco" value="{{ produto[3] }}" required></p>
+        <p>Estoque: <input type="text" id="estoque" value="{{ produto[4] }}" required></p>
+        <button type="submit">Salvar</button>
+        <a href="/product_list">Cancelar</a>
+    </form>
 </body>
+
+<!-- Script externo de edição de produto -->
+<script src="{{ url_for('static', filename='js/edit_product.js') }}"></script>
 
 </html>

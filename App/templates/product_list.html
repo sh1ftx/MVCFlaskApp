@@ -1,14 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Produtos</title>
+    <link href="{{ url_for('static', filename='css/user_list.css') }}" rel="stylesheet">
 </head>
 
 <body>
-
+    <h1>Produtos Cadastrados</h1>
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>Marca</th>
+            <th>Preço</th>
+            <th>Estoque</th>
+            <th>Ações</th>
+        </tr>
+        {% for produto in produtos %}
+        <tr>
+            <td>{{ produto[1] }}</td>
+            <td>{{ produto[2] }}</td>
+            <td>R$ {{ produto[3] }}</td>
+            <td>{{ produto[4] }}</td>
+            <td>
+                <a href="/edit_product/{{ produto[0] }}" class="button editar">Editar</a>
+                <a href="/excluir_produto/{{ produto[0] }}" class="button excluir">Excluir</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="/register_product" class="button novo">Cadastrar novo produto</a>
 </body>
 
 </html>
