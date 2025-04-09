@@ -18,7 +18,7 @@ document.getElementById("cadastroForm").addEventListener("submit", async (e) => 
 
     if (response.ok) {
         alert(result.message);
-        window.location.href = "/product_list"
+        window.location.href = "/product_list";
     } else {
         alert(result.error || "Erro ao cadastrar!");
     }
