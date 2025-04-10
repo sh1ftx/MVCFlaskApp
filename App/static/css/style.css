@@ -3,13 +3,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* ! Corpo da página */
 body {
   min-height: 100vh;
-  background: linear-gradient(145deg, #1a1a1a, #2e2e2e);
+  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
   color: #E0E0E0;
   display: flex;
   flex-direction: column;
@@ -22,9 +22,9 @@ body {
 /* ! Cabeçalho */
 header {
   width: 100%;
-  background: linear-gradient(90deg, #1f1f1f, #2a2a2a);
+  background: linear-gradient(90deg, #141414, #1f1f1f);
   padding: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 h1 {
@@ -53,16 +53,17 @@ h3 {
   margin-top: 40px;
   margin-bottom: 25px;
   max-width: 800px;
-  line-height: 1.6;
+  line-height: 1.7;
+  font-size: 1.1rem;
 }
 
 /* ! Cards de funcionalidades */
 .card {
-  background: linear-gradient(135deg, #1e1e1e, #2b2b2b);
+  background: linear-gradient(135deg, #121212, #1f1f1f);
   padding: 25px;
   margin: 20px;
-  border-radius: 12px;
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+  border-radius: 16px;
+  box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.5);
   max-width: 420px;
   width: 100%;
   display: flex;
@@ -70,16 +71,15 @@ h3 {
   align-items: center;
 }
 
-/* ! Botão estilizado */
+/* ! Botões */
 .button,
 button {
   display: inline-block;
   margin-top: 12px;
-  padding: 12px 18px;
+  padding: 14px 22px;
   background: linear-gradient(90deg, #64ffda, #00e5ff);
   color: #121212;
-  text-decoration: none;
-  border-radius: 6px;
+  border-radius: 999px;
   font-weight: bold;
   border: none;
   cursor: pointer;
@@ -89,7 +89,17 @@ button {
 .button:hover,
 button:hover {
   background: linear-gradient(90deg, #52e0c4, #00c3f9);
-  transform: scale(1.05);
+  transform: scale(1.07);
+}
+
+/* ! Botões negativos */
+.button-negative {
+  background: linear-gradient(90deg, #ff4d4d, #ff9933);
+  color: #fff;
+}
+
+.button-negative:hover {
+  background: linear-gradient(90deg, #e63946, #ff8c42);
 }
 
 /* ! Formulário */
@@ -97,24 +107,25 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(135deg, #1d1d1d, #2c2c2c);
+  background: linear-gradient(135deg, #161616, #252525);
   padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
   max-width: 500px;
   width: 100%;
   margin: 20px;
 }
 
 .formulario input {
-  padding: 12px;
+  padding: 14px;
   margin: 10px 0;
   width: 90%;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   background-color: #2A2A2A;
   color: #E0E0E0;
   transition: background-color 0.3s ease;
+  font-size: 1rem;
 }
 
 .formulario input:focus {
@@ -123,7 +134,7 @@ button:hover {
 }
 
 .formulario input::placeholder {
-  color: #aaa;
+  color: #999;
 }
 
 /* ! Rodapé */
@@ -131,10 +142,31 @@ footer,
 .footer {
   margin-top: auto;
   padding: 20px;
-  background: linear-gradient(90deg, #1e1e1e, #2e2e2e);
+  background: linear-gradient(90deg, #141414, #222222);
   width: 100%;
-  box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.3);
-  color: #888;
+  box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.4);
+  color: #aaa;
   text-align: center;
   font-size: 14px;
+}
+
+/* ! Responsividade */
+@media (max-width: 768px) {
+  .card, .formulario {
+    margin: 15px;
+    padding: 20px;
+  }
+
+  h1, h2 {
+    font-size: 24px;
+  }
+
+  .intro {
+    font-size: 1rem;
+  }
+
+  button, .button {
+    padding: 12px 18px;
+    font-size: 0.95rem;
+  }
 }

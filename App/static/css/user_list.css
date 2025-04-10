@@ -3,12 +3,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
   min-height: 100vh;
-  background: linear-gradient(145deg, #1a1a1a, #2e2e2e);
+  background: linear-gradient(145deg, #0e0e0e, #1a1a1a);
   color: #E0E0E0;
   padding: 40px 20px;
   text-align: center;
@@ -31,27 +31,27 @@ table {
   max-width: 900px;
   margin: 0 auto;
   border-collapse: collapse;
-  background: linear-gradient(135deg, #1f1f1f, #2c2c2c);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-  border-radius: 12px;
+  background: linear-gradient(135deg, #1c1c1c, #2a2a2a);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.45);
+  border-radius: 14px;
   overflow: hidden;
 }
 
 th,
 td {
   padding: 16px 20px;
-  border-bottom: 1px solid #444;
+  border-bottom: 1px solid #3a3a3a;
   text-align: left;
 }
 
 th {
-  background-color: #2e2e2e;
+  background-color: #252525;
   font-size: 16px;
   color: #00ffe5;
 }
 
 tr:nth-child(even) {
-  background-color: #252525;
+  background-color: #202020;
 }
 
 tr:hover {
@@ -60,55 +60,115 @@ tr:hover {
 
 /* Botões */
 .button {
-  padding: 10px 16px;
+  padding: 12px 20px;
   background: linear-gradient(90deg, #64ffda, #00e5ff);
   color: #121212;
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: 999px;
   font-weight: bold;
   border: none;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  font-size: 0.95rem;
+  display: inline-block;
 }
 
 .button:hover {
   background: linear-gradient(90deg, #52e0c4, #00c3f9);
-  transform: scale(1.05);
+  transform: scale(1.07);
+}
+
+/* Botão excluir com gradiente vermelho-laranja */
+.button-excluir {
+  padding: 12px 20px;
+  background: linear-gradient(90deg, #ff416c, #ff4b2b);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+}
+
+.button-excluir:hover {
+  background: linear-gradient(90deg, #e63946, #ff8c42);
+  transform: scale(1.07);
 }
 
 /* Link de cadastrar novo */
 a[href="/user_register"] {
   display: inline-block;
-  margin-top: 30px;
+  margin-top: 40px;
   background: transparent;
   color: #64ffda;
   text-decoration: none;
   font-weight: bold;
   border: 2px solid #64ffda;
-  padding: 10px 16px;
-  border-radius: 8px;
+  padding: 12px 20px;
+  border-radius: 999px;
   transition: all 0.3s ease;
 }
 
-a[href="/use_register"]:hover {
+a[href="/user_register"]:hover {
   background-color: #64ffda;
   color: #121212;
 }
 
-/* Botão excluir com gradiente vermelho-laranja */
-.button-excluir {
-  padding: 10px 16px;
-  background: linear-gradient(90deg, #ff416c, #ff4b2b);
-  color: #121212;
+/* Voltar estilizado */
+a[href="/"] {
+  display: inline-block;
+  margin-top: 30px;
+  background: transparent;
+  color: #ff416c;
   text-decoration: none;
-  border-radius: 6px;
   font-weight: bold;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  border: 2px solid #ff416c;
+  padding: 10px 18px;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
 }
 
-.button-excluir:hover {
-  background: linear-gradient(90deg, #d34163, #ff4b2b);
+a[href="/"]:hover {
+  background-color: #64ffda;
+  color: #121212;
   transform: scale(1.05);
+}
+
+
+
+a[href="/"]:hover {
+  color: #caa9ff;
+  transform: scale(1.05);
+}
+
+
+a[href="/"]:hover {
+  color: #caa9ff;
+  transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  table {
+    font-size: 0.9rem;
+  }
+
+  .button,
+  .button-excluir {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+
+  th, td {
+    padding: 12px 14px;
+  }
+
+  a[href="/user_register"],
+  a[href="/"] {
+    display: block;
+    margin: 20px auto;
+  }
 }
