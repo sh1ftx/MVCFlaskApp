@@ -14,7 +14,7 @@ cursor.execute("""
     CREATE TABLE IF NOT EXISTS usuarios(
         id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
         nome TEXT NOT NULL,
-        email TEXT UNIQUE NOT NULL,
+        email TEXT NOT NULL,
         telefone TEXT NOT NULL,
         cidade TEXT NOT NULL,
         data_nascimento DATETIME NOT NULL
@@ -26,7 +26,7 @@ cursor.execute("""
                     id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
                     nome TEXT NOT NULL,
                     marca TEXT NOT NULL,
-                    preco TEXT UNIQUE NOT NULL,
+                    preco TEXT NOT NULL,
                     estoque INTEGER NOT NULL)""")
                     
 conexao.commit()
