@@ -11,6 +11,7 @@ def home():
 @app.route("/user_register", methods=["GET", "POST"])
 def user_register():
     if request.method == "POST":
+        
         data = request.json
 
         user_data = {

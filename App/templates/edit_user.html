@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Editar Usuário</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/edit_user.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/edit_user.css') }}">
 </head>
 
 <body>
@@ -17,7 +17,7 @@
         <p>Cidade: <input type="text" id="cidade" value="{{ user[4] }}" required></p>
         <p>Data Nasc.: <input type="date" id="data_nascimento" value="{{ user[5] }}" required></p>
         <button type="submit">Salvar</button>
-        <a href="/user_list">Cancelar</a>
+        <button type="button" class="button-cancelar" onclick="window.location.href='/user_list'">Cancelar</button>
     </form>
 
 

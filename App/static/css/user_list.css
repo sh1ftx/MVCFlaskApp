@@ -94,3 +94,21 @@ a[href="/use_register"]:hover {
   background-color: #64ffda;
   color: #121212;
 }
+
+/* Botão excluir com gradiente vermelho-laranja */
+.button-excluir {
+  padding: 10px 16px;
+  background: linear-gradient(90deg, #ff416c, #ff4b2b);
+  color: #121212;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.button-excluir:hover {
+  background: linear-gradient(90deg, #d34163, #ff4b2b);
+  transform: scale(1.05);
+}
