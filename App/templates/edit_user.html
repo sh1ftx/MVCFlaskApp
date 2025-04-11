@@ -13,7 +13,7 @@
         <input type="hidden" id="id" name="id" value="{{ user[0] }}">
         <p>Nome: <input type="text" id="nome" value="{{ user[1] }}" required></p>
         <p>Email: <input type="email" id="email" value="{{ user[2] }}" required></p>
-        <p>Telefone: <input type="text" id="telefone" value="{{ user[3] }}" required></p>
+        <p>Telefone: <input type="text" pattern="[0-9]+" id="telefone" value="{{ user[3] }}" required></p>
         <p>Cidade: <input type="text" id="cidade" value="{{ user[4] }}" required></p>
         <p>Data Nasc.: <input type="date" id="data_nascimento" value="{{ user[5] }}" required></p>
         <button type="submit">Salvar</button>
