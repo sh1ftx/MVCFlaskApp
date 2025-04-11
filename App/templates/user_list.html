@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Lista de Usuários</title>
-    <link href="{{ url_for('static', filename='css/user_list.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/page_list.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -21,8 +21,8 @@
             <td>{{ user[2] }}</td>
             <td>
                 <a href="/edit_user/{{ user[0] }}" class="button editar">Editar</a>
-                <a href="/excluir/{{ user[0] }}" class="button-excluir">Excluir</a>
-                <!-- envia o id para a pagina de edicao-->
+                <a href="/delete_user/{{ user[0] }}" class="button-excluir">Excluir</a>
+                <!-- envia o id para a rota de edicao ou exclusao-->
             </td>
         </tr>
         {% endfor %}

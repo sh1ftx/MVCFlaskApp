@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Editar Usuário</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/edit_user.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/page_edit.css') }}">
 </head>
 
 <body>
     <h1>Editar Usuário</h1>
+
     <form id="editForm">
         <input type="hidden" id="id" name="id" value="{{ user[0] }}">
         <p>Nome: <input type="text" id="nome" value="{{ user[1] }}" required></p>
@@ -20,8 +21,7 @@
         <button type="button" class="button-cancelar" onclick="window.location.href='/user_list'">Cancelar</button>
     </form>
 
-
+    <script src="{{ url_for ('static', filename = 'js/edit_user.js') }}"></script>
 </body>
-<script src="{{ url_for ('static', filename = 'js/edit_user.js') }}"></script>
 
 </html>

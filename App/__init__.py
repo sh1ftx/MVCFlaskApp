@@ -4,4 +4,4 @@ from flask import Flask
 app = Flask(__name__)
 
 # Importa as rotas
-from App import routes
+from App import views
