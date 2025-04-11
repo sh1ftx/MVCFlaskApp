@@ -63,7 +63,6 @@ def edit_user(id):
 # Função que renderiza a pagina que mostra todos os usuarios
 @app.route("/user_list")
 def user_list():
-    users = read("usuarios")
     return render_template("user_list.html", users = read("usuarios"))
 
 # Função para excluir um usuario
