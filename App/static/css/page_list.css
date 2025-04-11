@@ -162,7 +162,8 @@ a[href="/"]:hover {
     font-size: 0.9rem;
   }
 
-  th, td {
+  th,
+  td {
     padding: 12px 14px;
   }
 
