@@ -13,6 +13,12 @@ def user_register():
     if request.method == "POST":
         
         data = request.json
+        email = data.get("email")
+        
+        # Verifica se o email ja ta em uso
+        email_used = read("usuarios", f"email = '{email}'")
+        if email_used:
+            return jsonify({"error": "Email em uso"}), 409
 
         user_data = {
             "nome": data.get("nome"),
@@ -24,7 +30,7 @@ def user_register():
         
         create("usuarios", user_data)
         
-        return jsonify({"message": "Usuário cadastrado com sucesso!"}), 201
+        return jsonify({"message": "Usuário cadastrado com sucesso!"}), 201 # msg de sucesso
     else:
         return render_template("user_register.html")
     
@@ -33,6 +39,12 @@ def user_register():
 def edit_user(id):
     if request.method == "POST":
         data = request.json
+        email = data.get("email")
+
+        # Verifica se o email ja ta em uso
+        email_used = read("usuarios", f"email = '{email}'")
+        if email_used:
+            return jsonify({"error": "Email em uso"}), 409
 
         user_data = {
             "nome": data.get("nome"),
@@ -45,15 +57,14 @@ def edit_user(id):
         update("usuarios", user_data, f"id = {id}")
         return jsonify({"message": "Usuário atualizado com sucesso!"}), 200
     
-    user = read("usuarios", f"id = {id}")[0]
-    return render_template("edit_user.html", user=user)
+    return render_template("edit_user.html", user=read("usuarios", f"id = {id}")[0])
 
 
 # Função que renderiza a pagina que mostra todos os usuarios
 @app.route("/user_list")
 def user_list():
     users = read("usuarios")
-    return render_template("user_list.html", users=users)
+    return render_template("user_list.html", users = read("usuarios"))
 
 # Função para excluir um usuario
 @app.route("/excluir/<int:id>")
@@ -81,8 +92,7 @@ def register_product():
 # Página de listagem de produtos
 @app.route("/product_list")
 def product_list():
-    produtos = read("produtos")
-    return render_template("product_list.html", produtos=produtos)
+    return render_template("product_list.html", produtos = read("produtos"))
 
 # Editar produto
 @app.route("/edit_product/<int:id>", methods=["GET", "POST"])
@@ -98,8 +108,7 @@ def edit_product(id):
         update("produtos", produto, f"id = {id}")
         return jsonify({"message": "Produto atualizado com sucesso!"}), 200
 
-    produto = read("produtos", f"id = {id}")[0]
-    return render_template("edit_product.html", produto=produto)
+    return render_template("edit_product.html", produto = read("produtos", f"id = {id}")[0])
 
 # Excluir produto
 @app.route("/excluir_produto/<int:id>")
