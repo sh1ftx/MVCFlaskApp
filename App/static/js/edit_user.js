@@ -14,7 +14,7 @@ document.getElementById("editForm").addEventListener("submit", async (e) => {
 
     // Envio dos dados para a route de edicao, passando o id por url
     const response = await fetch(`/edit_user/${userId}`, {
-        method: "POST",
+        method: "PUT",
         headers: { "Content-Type": "Application/json" },
         body: JSON.stringify(data)
     });

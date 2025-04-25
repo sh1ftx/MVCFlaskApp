@@ -10,19 +10,17 @@ def home():
 # rota para o cadastro
 @app.route("/user_register", methods=["GET", "POST"])
 def user_register():
-
-    # faz a adicao
     if request.method == "POST":
         data = request.json
         response, status = add_new_user(data)
         return jsonify(response), status
     
-    return render_template("user_register.html") # apenas renderiza a page
+    return render_template("user_register.html")
 
 # rota de edicao
-@app.route("/edit_user/<int:id>", methods=["GET", "POST"])
+@app.route("/edit_user/<int:id>", methods=["GET", "PUT"])
 def edit_user_route(id):
-    if request.method == "POST":
+    if request.method == "PUT":
         data = request.json
         response, status = edit_user(id, data)
         return jsonify(response), status
@@ -35,7 +33,7 @@ def user_list_route():
     return render_template("user_list.html", users=list_users())
 
 # rota de delete
-@app.route("/delete_user/<int:id>")
+@app.route("/delete_user/<int:id>", methods=["GET", "DELETE"])
 def delete_user_route(id):
     delete_user(id)
     return redirect(url_for("user_list_route"))
@@ -58,16 +56,16 @@ def lista_produtos_route():
     return render_template("product_list.html", produtos=list_products())
 
 # editar
-@app.route("/edit_product/<int:id>", methods=["GET", "POST"])
+@app.route("/edit_product/<int:id>", methods=["GET", "PUT"])
 def editar_produto_route(id):
-    if request.method == "POST":
+    if request.method == "PUT":
         data = request.json
         response, status = edit_product(id, data)
         return jsonify(response), status
     return render_template("edit_product.html", produto=get_product(id))
 
 # deletar
-@app.route("/excluir_produto/<int:id>")
+@app.route("/excluir_produto/<int:id>", methods=["GET", "DELETE"])
 def excluir_produto_route(id):
     delete_product(id)
     return redirect(url_for("lista_produtos_route"))
