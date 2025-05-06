@@ -88,7 +88,7 @@ MVCFLASKAPP/
 
 - **App/**: Contém todos os arquivos da aplicação.
 - **App/static/**: Contém os arquivos estáticos, como arquivos CSS e JavaScript, organizados por tipo e página.
-- **App/templates/**: Contém os templates HTML usados pela aplicação, com a utilização do motor de templates Jinja2.
+- **App/templates/**: Contém os templates HTML usados pela aplicação.
 - **App/controllers.py**: Define as rotas e a lógica de controle da aplicação.
 - **App/crud.py**: Contém funções para as operações CRUD de usuários e produtos.
 - **App/models.py**: Define os modelos do banco de dados, com as tabelas necessárias.
@@ -98,7 +98,7 @@ MVCFLASKAPP/
 
 - **Python**: Principal linguagem de programação.
 - **Flask**: Framework web para desenvolvimento de aplicações em Python.
-- **Jinja2**: Motor de templates utilizado para gerar o HTML dinâmico.
+- **HTML**: Motor de templates utilizado para gerar o HTML dinâmico.
 - **SQLite**: Banco de dados leve, integrado ao Flask.
 - **CSS**: Para estilizar a interface web.
 - **JavaScript**: Para manipulação dinâmica da interface do usuário.
