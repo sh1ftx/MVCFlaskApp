@@ -1,6 +1,3 @@
-Aqui está a documentação com a seção de **Participantes do Projeto** corrigida, conforme solicitado:
-
-```markdown
 # MVCFlaskApp - Documentação
 
 ## Índice
@@ -112,8 +109,7 @@ MVCFLASKAPP/
 
    ```bash
    git clone https://github.com/sh1ftx/MVCFlaskApp.git
-   cd MVCFlaskApp
-````
+   cd MVCFlaskApp ```
 
 2. **Instale as Dependências**:
 
@@ -151,12 +147,3 @@ MVCFLASKAPP/
 O **MVCFlaskApp** foi desenvolvido para demonstrar como aplicar a arquitetura MVC em uma aplicação web simples, utilizando Flask e SQLite. Ele serve como base para aplicações mais complexas, podendo ser estendido para incluir novas funcionalidades como autenticação de usuários, validação de formulários e integração com outros bancos de dados.
 
 A separação clara entre as camadas da aplicação torna o código mais organizado e facilita a manutenção. O uso de Flask, Jinja2 e SQLite proporciona uma base sólida e fácil de entender para desenvolvedores iniciantes em Python.
-
----
-
-Esta documentação foi desenvolvida para ser uma introdução à aplicação, explicando de forma clara e objetiva suas funcionalidades e estrutura, visando facilitar a compreensão do projeto durante a apresentação acadêmica.
-
-```
-
-Essa versão agora inclui a seção de participantes corretamente, com todos os nomes e links para os perfis do GitHub dos integrantes, exceto o João Henrique. 
-```
