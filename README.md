@@ -96,6 +96,7 @@ MVCFLASKAPP/
 
 ## Tecnologias Utilizadas
 
+- **Python**: Principal linguagem de programação.
 - **Flask**: Framework web para desenvolvimento de aplicações em Python.
 - **Jinja2**: Motor de templates utilizado para gerar o HTML dinâmico.
 - **SQLite**: Banco de dados leve, integrado ao Flask.
