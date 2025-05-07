@@ -57,6 +57,14 @@ def delete_user(id):
 
 # adiciona produto
 def add_new_product(data):
+    p_name = data.get("nome")
+    p_marca = data.get("marca")
+
+    # verifica se o produto (nome / marca ) ja foi cadastrado
+    product_registered = read("produtos", f"nome = '{p_name}' AND marca = '{p_marca}'")
+    if product_registered:
+        return {"error": "Produto já existente!"}, 409
+
     produto = {
         "nome": data.get("nome"),
         "marca": data.get("marca"),
@@ -68,6 +76,14 @@ def add_new_product(data):
 
 # edita
 def edit_product(id, data):
+    p_name = data.get("nome")
+    p_marca = data.get("marca")
+
+    # verifica se o produto (nome / marca ) ja foi cadastrado
+    product_registered = read("produtos", f"nome = '{p_name}' AND marca = '{p_marca}'")
+    if product_registered:
+        return {"error": "Produto já existente!"}, 409
+
     produto = {
         "nome": data.get("nome"),
         "marca": data.get("marca"),
