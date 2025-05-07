@@ -14,9 +14,17 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   text-align: center;
   padding: 30px 20px;
+}
+
+/* centralização dos cards */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ! Cabeçalho */
@@ -152,12 +160,15 @@ footer,
 
 /* ! Responsividade */
 @media (max-width: 768px) {
-  .card, .formulario {
+
+  .card,
+  .formulario {
     margin: 15px;
     padding: 20px;
   }
 
-  h1, h2 {
+  h1,
+  h2 {
     font-size: 24px;
   }
 
@@ -165,7 +176,8 @@ footer,
     font-size: 1rem;
   }
 
-  button, .button {
+  button,
+  .button {
     padding: 12px 18px;
     font-size: 0.95rem;
   }
