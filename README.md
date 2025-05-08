@@ -7,12 +7,20 @@
         \/                 \/     \/              \/     \/     \/       \/|__|   |__|    
 ```
 
-## Índice
+![Python](https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge&logo=python)
+![Flask](https://img.shields.io/badge/Flask-2.2-lightgrey?style=for-the-badge&logo=flask)
+![SQLite](https://img.shields.io/badge/SQLite-3.36-blue?style=for-the-badge&logo=sqlite)
+![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?style=for-the-badge&logo=javascript)
+
+---
+
+## 📌 Índice
 
 1. [Introdução](#introdução)
 2. [Objetivos do Projeto](#objetivos-do-projeto)
 3. [Arquitetura do Projeto](#arquitetura-do-projeto)
-   1. [Modelo MVC](#modelo-mvc)
 4. [Estrutura de Diretórios](#estrutura-de-diretórios)
 5. [Tecnologias Utilizadas](#tecnologias-utilizadas)
 6. [Funcionalidades Implementadas](#funcionalidades-implementadas)
@@ -20,90 +28,95 @@
 8. [Participantes do Projeto](#participantes-do-projeto)
 9. [Considerações Finais](#considerações-finais)
 
-## Introdução
+---
 
-O **MVCFlaskApp** é uma aplicação web desenvolvida utilizando o framework Flask, seguindo a arquitetura **MVC** (Model-View-Controller). O objetivo deste projeto é demonstrar a implementação de uma aplicação web funcional com as operações CRUD (Create, Read, Update, Delete), que permite gerenciar usuários e produtos. Além disso, o projeto utiliza boas práticas de organização de código, com separação clara entre as camadas da aplicação.
+## 🚀 Introdução
 
-## Objetivos do Projeto
+O **MVCFlaskApp** é uma aplicação web desenvolvida com o framework Flask, seguindo a arquitetura **MVC (Model-View-Controller)**. O projeto tem como objetivo demonstrar a implementação de uma aplicação web funcional com operações CRUD (Create, Read, Update, Delete), permitindo o gerenciamento de usuários e produtos. Além disso, adota boas práticas de organização de código, com separação clara entre as camadas da aplicação.
 
-O objetivo principal deste projeto é criar uma aplicação web simples para gerenciar usuários e produtos, implementando as operações CRUD essenciais. O sistema foi projetado para ser modular e fácil de entender, de modo que sirva como exemplo didático de aplicação de conceitos fundamentais do Flask e da arquitetura MVC. O projeto também permite a exploração do uso de banco de dados SQLite integrado ao Flask, além de ser responsivo, com uma interface de fácil utilização.
+---
 
-## Arquitetura do Projeto
+## 🎯 Objetivos do Projeto
 
-### Modelo MVC
+- Criar uma aplicação web simples para gerenciar usuários e produtos.
+- Implementar as operações CRUD essenciais.
+- Adotar a arquitetura MVC para organização do código.
+- Utilizar o banco de dados SQLite integrado ao Flask.
+- Desenvolver uma interface responsiva e de fácil utilização.
 
-A arquitetura do projeto segue o padrão **MVC (Model-View-Controller)**, onde:
+---
 
-- **Model**: Representa a camada responsável pela manipulação de dados e interações com o banco de dados. No projeto, esta camada é representada pela classe `models.py`.
-  
-- **View**: A camada de visualização (View) é responsável pela interface com o usuário. No projeto, são utilizadas as **views** em HTML com o motor de templates **Jinja2**, localizadas na pasta `templates/`.
+## 🧱 Arquitetura do Projeto
 
-- **Controller**: A camada de controle é responsável pela lógica de controle da aplicação. As rotas, que são responsáveis por processar as requisições HTTP, estão localizadas no arquivo `controllers.py`. A lógica de renderização das páginas também está centralizada no arquivo `views.py`.
+A arquitetura do projeto segue o padrão **MVC (Model-View-Controller)**, conforme ilustrado abaixo:
 
-A separação clara entre essas camadas proporciona maior organização, facilitando a manutenção e escalabilidade da aplicação.
-
-## Estrutura de Diretórios
-
-A estrutura de diretórios do projeto é organizada da seguinte maneira:
-
+```mermaid
+graph TD
+    A[Usuário] -->|Requisição HTTP| B[Controller]
+    B -->|Interage com| C[Model]
+    C -->|Retorna dados para| B
+    B -->|Renderiza| D[View]
+    D -->|Resposta HTTP| A
 ```
 
+- **Model**: Responsável pela manipulação de dados e interações com o banco de dados. Representado pela classe `models.py`.
+- **View**: Responsável pela interface com o usuário. Utiliza templates HTML com o motor de templates Jinja2, localizados na pasta `templates/`.
+- **Controller**: Responsável pela lógica de controle da aplicação. As rotas e a lógica de renderização das páginas estão centralizadas nos arquivos `controllers.py` e `views.py`.
+
+---
+
+## 📁 Estrutura de Diretórios
+
+```
 MVCFLASKAPP/
 ├── App/
-│   ├── **pycache**/                # Cache de compilação Python (automático)
+│   ├── __pycache__/                # Cache de compilação Python (automático)
 │   ├── static/                     # Arquivos estáticos
 │   │   ├── css/                    # Estilos CSS separados por página
-│   │   │   ├── page\_cadastro.css
-│   │   │   ├── page\_edit.css
-│   │   │   ├── page\_list.css
+│   │   │   ├── page_cadastro.css
+│   │   │   ├── page_edit.css
+│   │   │   ├── page_list.css
 │   │   │   └── style.css
 │   │   ├── js/                     # Scripts JS separados por página
-│   │   │   ├── edit\_product.js
-│   │   │   ├── edit\_user.js
-│   │   │   ├── register\_product.js
-│   │   │   └── user\_register.js
-│   ├── templates/                 # Views (HTML com Jinja2)
-│   │   ├── edit\_product.html
-│   │   ├── edit\_user.html
+│   │   │   ├── edit_product.js
+│   │   │   ├── edit_user.js
+│   │   │   ├── register_product.js
+│   │   │   └── user_register.js
+│   ├── templates/                  # Views (HTML com Jinja2)
+│   │   ├── edit_product.html
+│   │   ├── edit_user.html
 │   │   ├── index.html
-│   │   ├── product\_list.html
-│   │   ├── register\_product.html
-│   │   ├── user\_list.html
-│   │   └── user\_register.html
-│   ├── **init**.py                # Inicialização do pacote Flask
-│   ├── controllers.py             # Controladores (rotas e lógica intermediária)
-│   ├── crud.py                    # Operações CRUD (Create, Read, Update, Delete)
-│   ├── models.py                  # Definições de modelos (tabelas/banco)
-│   └── views.py                   # Lógica de renderização e retorno de templates
-├── database\_teste\_mvc.db          # Banco de dados SQLite
-├── main.py                        # Arquivo principal para rodar a app
-├── requirements.txt               # Dependências do projeto
-├── README.md                      # Documentação (em construção)
-├── LICENSE                        # Licença do projeto
-└── .gitignore                     # Ignora arquivos desnecessários no Git
+│   │   ├── product_list.html
+│   │   ├── register_product.html
+│   │   ├── user_list.html
+│   │   └── user_register.html
+│   ├── __init__.py                 # Inicialização do pacote Flask
+│   ├── controllers.py              # Controladores (rotas e lógica intermediária)
+│   ├── crud.py                     # Operações CRUD (Create, Read, Update, Delete)
+│   ├── models.py                   # Definições de modelos (tabelas/banco)
+│   └── views.py                    # Lógica de renderização e retorno de templates
+├── database_teste_mvc.db           # Banco de dados SQLite
+├── main.py                         # Arquivo principal para rodar a app
+├── requirements.txt                # Dependências do projeto
+├── README.md                       # Documentação
+├── LICENSE                         # Licença do projeto
+└── .gitignore                      # Ignora arquivos desnecessários no Git
+```
 
-````
+---
 
-### Detalhes dos Diretórios
+## 🛠️ Tecnologias Utilizadas
 
-- **App/**: Contém todos os arquivos da aplicação.
-- **App/static/**: Contém os arquivos estáticos, como arquivos CSS e JavaScript, organizados por tipo e página.
-- **App/templates/**: Contém os templates HTML usados pela aplicação.
-- **App/controllers.py**: Define as rotas e a lógica de controle da aplicação.
-- **App/crud.py**: Contém funções para as operações CRUD de usuários e produtos.
-- **App/models.py**: Define os modelos do banco de dados, com as tabelas necessárias.
-- **App/views.py**: Define a lógica de renderização e exibição das views.
-
-## Tecnologias Utilizadas
-
-- **Python**: Principal linguagem de programação.
+- **Python**: Linguagem de programação principal.
 - **Flask**: Framework web para desenvolvimento de aplicações em Python.
-- **HTML**: Motor de templates utilizado para gerar o HTML dinâmico.
-- **SQLite**: Banco de dados leve, integrado ao Flask.
+- **HTML**: Utilizado para estruturar as páginas web.
 - **CSS**: Para estilizar a interface web.
 - **JavaScript**: Para manipulação dinâmica da interface do usuário.
+- **SQLite**: Banco de dados leve, integrado ao Flask.
 
-## Funcionalidades Implementadas
+---
+
+## ✅ Funcionalidades Implementadas
 
 - **Cadastro de Usuários e Produtos**: Permite registrar novos usuários e produtos no sistema.
 - **Listagem de Usuários e Produtos**: Exibe uma lista de usuários e produtos cadastrados.
@@ -111,13 +124,16 @@ MVCFLASKAPP/
 - **Exclusão de Usuários e Produtos**: Permite excluir usuários e produtos do sistema.
 - **Banco de Dados**: Utiliza SQLite para armazenar dados de usuários e produtos.
 
-## Como Executar o Projeto
+---
+
+## 🧪 Como Executar o Projeto
 
 1. **Clone o Repositório**:
 
    ```bash
    git clone https://github.com/sh1ftx/MVCFlaskApp.git
-   cd MVCFlaskApp ```
+   cd MVCFlaskApp
+   ```
 
 2. **Instale as Dependências**:
 
@@ -143,15 +159,21 @@ MVCFLASKAPP/
    http://127.0.0.1:5000
    ```
 
-## Participantes do Projeto
+---
 
-* [Gleison Oliveira](https://github.com/gleiSUN)
-* [Kayky Rodrigues](https://github.com/xFrostzss)
-* [Fernando Sena](https://github.com/FernandosenaDev)
-* [Vinycius Huellyson](https://github.com/VINYCIU51)
+## 👥 Participantes do Projeto
 
-## Considerações Finais
+- [Gleison Oliveira](https://github.com/gleiSUN)
+- [Kayky Rodrigues](https://github.com/xFrostzss)
+- [Fernando Sena](https://github.com/FernandosenaDev)
+- [Vinycius Huellyson](https://github.com/VINYCIU51)
+
+---
+
+## 📝 Considerações Finais
 
 O **MVCFlaskApp** foi desenvolvido para demonstrar como aplicar a arquitetura MVC em uma aplicação web simples, utilizando Flask e SQLite. Ele serve como base para aplicações mais complexas, podendo ser estendido para incluir novas funcionalidades como autenticação de usuários, validação de formulários e integração com outros bancos de dados.
 
 A separação clara entre as camadas da aplicação torna o código mais organizado e facilita a manutenção. O uso de Flask, Jinja2 e SQLite proporciona uma base sólida e fácil de entender para desenvolvedores iniciantes em Python.
+
+---
