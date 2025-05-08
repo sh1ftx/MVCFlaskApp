@@ -1,3 +1,7 @@
+![status](https://img.shields.io/badge/status-concluído-brightgreen?style=for-the-badge)
+![arquitetura](https://img.shields.io/badge/arquitetura-MVC-blueviolet?style=for-the-badge)
+![metodologia](https://img.shields.io/badge/metodologia-Scrum-orange?style=for-the-badge)
+
 ```
    _________   _____________ ___________.__                 __      _____                 
   /     \   \ /   /\_   ___ \\_   _____/|  | _____    _____|  | __ /  _  \ ______ ______  
