@@ -1,6 +1,3 @@
-![status](https://img.shields.io/badge/status-concluído-brightgreen?style=for-the-badge)
-![arquitetura](https://img.shields.io/badge/arquitetura-MVC-blueviolet?style=for-the-badge)
-![metodologia](https://img.shields.io/badge/metodologia-Scrum-orange?style=for-the-badge)
 
 ```
    _________   _____________ ___________.__                 __      _____                 
@@ -10,6 +7,14 @@
 \____|__  /\___/    \______  /\___  /   |____(____  /____  >__|_ \____|__  /   __/|   __/ 
         \/                 \/     \/              \/     \/     \/       \/|__|   |__|    
 ```
+
+## Metodologias:
+
+![status](https://img.shields.io/badge/status-concluído-brightgreen?style=for-the-badge)
+![arquitetura](https://img.shields.io/badge/arquitetura-MVC-blueviolet?style=for-the-badge)
+![metodologia](https://img.shields.io/badge/metodologia-Scrum-orange?style=for-the-badge)
+
+## Ferramentas:
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge&logo=python)
 ![Flask](https://img.shields.io/badge/Flask-2.2-lightgrey?style=for-the-badge&logo=flask)
