@@ -8,7 +8,7 @@
         \/                 \/     \/              \/     \/     \/       \/|__|   |__|    
 ```
 
-## Metodologias:
+## Infos:
 
 ![status](https://img.shields.io/badge/status-concluído-brightgreen?style=for-the-badge)
 ![arquitetura](https://img.shields.io/badge/arquitetura-MVC-blueviolet?style=for-the-badge)
