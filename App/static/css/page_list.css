@@ -103,17 +103,50 @@ a[href="/user_register"] {
   margin-top: 40px;
   background: transparent;
   color: #64ffda;
+  /* Cor inicial do texto */
   text-decoration: none;
   font-weight: bold;
   border: 2px solid #64ffda;
+  /* Cor da borda inicial */
   padding: 12px 20px;
   border-radius: 999px;
   transition: all 0.3s ease;
 }
 
 a[href="/user_register"]:hover {
-  background-color: #64ffda;
+  background: linear-gradient(90deg, #64ffda, #00e5ff);
+  /* Gradiente ciano e verde */
   color: #121212;
+  /* Cor do texto no hover */
+  transform: scale(1.05);
+}
+
+/* Botão de cadastrar novo produto */
+a[href="/register_product"] {
+  display: inline-block;
+  margin-top: 40px;
+  background: transparent;
+  color: #64ffda;
+  /* Cor inicial do texto */
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid #64ffda;
+  /* Cor da borda inicial */
+  padding: 12px 20px;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+/* Efeito de hover no botão de cadastrar novo produto */
+a[href="/register_product"]:hover {
+  background: linear-gradient(90deg, #64ffda, #00e5ff);
+  /* Gradiente ciano e verde */
+  color: #121212;
+  /* Cor do texto no hover */
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 255, 229, 0.25);
+
 }
 
 /* Voltar estilizado */
@@ -130,6 +163,15 @@ a[href="/"] {
   transition: all 0.3s ease;
   font-size: 0.95rem;
 }
+
+a[href="/"]:hover {
+  background: linear-gradient(90deg, #ff416c, #ff4b2b);
+  /* Gradiente de vermelho e laranja */
+  color: #fff;
+  /* Muda a cor da fonte para branco para contraste */
+  transform: scale(1.05);
+}
+
 
 a[href="/"]:hover {
   background-color: #64ffda;

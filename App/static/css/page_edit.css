@@ -22,7 +22,6 @@ form {
   background: linear-gradient(145deg, #1a1a1a, #1f1f1f);
   padding: 30px;
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 255, 234, 0.1);
   max-width: 500px;
   width: 90%;
   margin-top: 20px;
@@ -40,7 +39,8 @@ input[type="text"],
 input[type="email"],
 input[type="date"] {
   padding: 10px;
-  border-radius: 6px;
+  border-radius: 14px;
+  /* Aumentando os cantos para combinar com os botões */
   border: none;
   background-color: #2a2a2a;
   color: #fff;
@@ -67,12 +67,16 @@ button[type="submit"] {
   color: #121212;
   border: none;
   cursor: pointer;
-  padding: 10px 20px;
-  border-radius: 6px;
+  padding: 14px;
+  border-radius: 30px;
+  /* Arredondando mais os botões */
   font-weight: bold;
   transition: all 0.3s ease-in-out;
-  min-width: 100px;
+  min-width: 120px;
+  /* Aumentando o tamanho mínimo para melhor visual */
   text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 255, 234, 0.1);
+
 }
 
 button[type="submit"]:hover {
@@ -86,15 +90,20 @@ button[type="submit"]:hover {
   color: #fff;
   border: none;
   cursor: pointer;
-  padding: 10px 20px;
-  border-radius: 6px;
+  padding: 14px;
+  border-radius: 30px;
+  /* Arredondando mais os botões */
   font-weight: bold;
   text-decoration: none;
   display: inline-block;
   text-align: center;
   transition: all 0.3s ease-in-out;
-  min-width: 100px;
-  font-size: 0.95rem;
+  min-width: 120px;
+  /* Aumentando o tamanho mínimo para melhor visual */
+  font-size: 1rem;
+  /* Ajustando o tamanho da fonte */
+  box-shadow: 0 8px 24px rgb(46, 0, 0);
+
 }
 
 .button-cancelar:hover {

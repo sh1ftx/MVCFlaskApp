@@ -116,6 +116,8 @@ header h1 {
 .button:hover {
   background: linear-gradient(to right, #52e0c4, #00acc1);
   transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 255, 229, 0.25);
+
 }
 
 .button-voltar {
@@ -132,6 +134,7 @@ header h1 {
   text-align: center;
   text-decoration: none;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgb(71, 0, 0);
 }
 
 .button-voltar:hover {

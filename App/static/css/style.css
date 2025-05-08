@@ -6,10 +6,11 @@
   font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* ! Corpo da página */
+/* Corpo da página */
 body {
   min-height: 100vh;
   background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+  /* só preto e cinza */
   color: #E0E0E0;
   display: flex;
   flex-direction: column;
@@ -17,9 +18,12 @@ body {
   justify-content: center;
   text-align: center;
   padding: 30px 20px;
+  box-shadow: 0 4px 12px rgba(0, 255, 229, 0.25);
+
 }
 
-/* centralização dos cards */
+
+/* Centralização dos cards */
 main {
   display: flex;
   flex-direction: column;
@@ -27,12 +31,13 @@ main {
   justify-content: center;
 }
 
-/* ! Cabeçalho */
+/* Cabeçalho */
 header {
   width: 100%;
   background: linear-gradient(90deg, #141414, #1f1f1f);
   padding: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+
 }
 
 h1 {
@@ -42,6 +47,8 @@ h1 {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+  text-align: center;
+
 }
 
 h2 {
@@ -49,23 +56,27 @@ h2 {
   background: linear-gradient(90deg, #64ffda, #00d4ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-align: center;
+  
 }
 
 h3 {
   font-size: 22px;
   margin-bottom: 10px;
+  text-align: center;
 }
 
-/* ! Seção de Introdução */
+/* Seção de Introdução */
 .intro {
   margin-top: 40px;
   margin-bottom: 25px;
   max-width: 800px;
   line-height: 1.7;
   font-size: 1.1rem;
+  text-align: justify;
 }
 
-/* ! Cards de funcionalidades */
+/* Cards de funcionalidades */
 .card {
   background: linear-gradient(135deg, #121212, #1f1f1f);
   padding: 25px;
@@ -77,6 +88,7 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: justify;
 }
 
 /* ! Botões */
@@ -85,22 +97,41 @@ button {
   display: inline-block;
   margin-top: 12px;
   padding: 14px 22px;
-  background: linear-gradient(90deg, #64ffda, #00e5ff);
+  /* background: linear-gradient(100deg, #3fa080, #04d3f8); */
+  background: linear-gradient(90deg, #64ffda, #00ffe5);
   color: #121212;
   border-radius: 999px;
   font-weight: bold;
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.35s ease;
+  box-shadow: 0 4px 12px rgba(0, 255, 229, 0.25);
 }
 
 .button:hover,
 button:hover {
-  background: linear-gradient(90deg, #52e0c4, #00c3f9);
+  /* background: linear-gradient(90deg, #00c3f9, #00bfa6, #00856d); */
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 255, 229, 0.35);
+}
+
+/* Efeito ao clicar (active) */
+.button:active,
+button:active {
+  transform: scale(0.97);
+  filter: brightness(1.2);
+  transition: all 0.2s ease;
+}
+
+
+.button:hover,
+button:hover {
+  background: linear-gradient(90deg, #00c3f9, #00856d);
+  /* degradê de hover mais escuro */
   transform: scale(1.07);
 }
 
-/* ! Botões negativos */
+/* Botões negativos */
 .button-negative {
   background: linear-gradient(90deg, #ff4d4d, #ff9933);
   color: #fff;
@@ -110,7 +141,7 @@ button:hover {
   background: linear-gradient(90deg, #e63946, #ff8c42);
 }
 
-/* ! Formulário */
+/* Formulário */
 .formulario {
   display: flex;
   flex-direction: column;
@@ -122,6 +153,7 @@ button:hover {
   max-width: 500px;
   width: 100%;
   margin: 20px;
+  text-align: justify;
 }
 
 .formulario input {
@@ -138,14 +170,15 @@ button:hover {
 
 .formulario input:focus {
   background-color: #333;
-  outline: 2px solid #00ffe5;
+  outline: 2px solid linear-gradient(100deg, #3fa080, #04d3f8);
+
 }
 
 .formulario input::placeholder {
   color: #999;
 }
 
-/* ! Rodapé */
+/* Rodapé */
 footer,
 .footer {
   margin-top: auto;
@@ -158,7 +191,7 @@ footer,
   font-size: 14px;
 }
 
-/* ! Responsividade */
+/* Responsividade */
 @media (max-width: 768px) {
 
   .card,
